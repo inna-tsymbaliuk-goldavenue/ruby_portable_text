@@ -8,11 +8,12 @@ module PortableText
 
     setting :block do
       setting :types, default: {
-        block:         BlockTypes::Block,
-        image:         BlockTypes::Image,
-        externalImage: BlockTypes::ExternalImage,
-        list:          BlockTypes::List,
-        span:          BlockTypes::Span
+        block:          BlockTypes::Block,
+        image:          BlockTypes::Image,
+        externalImage:  BlockTypes::ExternalImage,
+        list:           BlockTypes::List,
+        span:           BlockTypes::Span,
+        videoComponent: BlockTypes::Video
       }
 
       setting :mark_defs, default: {

@@ -9,11 +9,12 @@ module PortableText
 
       setting :block do
         setting :types, default: {
-          block:         Html::BlockTypes::Block,
-          image:         Html::BlockTypes::Image,
-          externalImage: Html::BlockTypes::ExternalImage,
-          list:          Html::BlockTypes::List,
-          span:          Html::BlockTypes::Span
+          block:          Html::BlockTypes::Block,
+          image:          Html::BlockTypes::Image,
+          externalImage:  Html::BlockTypes::ExternalImage,
+          list:           Html::BlockTypes::List,
+          span:           Html::BlockTypes::Span,
+          videoComponent: Html::BlockTypes::Video
         }
 
         setting :styles, default: {
