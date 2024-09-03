@@ -5,11 +5,9 @@ module PortableText
         param :image
 
         def view_template
-          if @image.asset.key?("url")
-            img(src: @image.asset["url"])
-          else
-            div { "Please provide a url for this image" }
-          end
+          return unless @image.asset.key?("_ref")
+
+          img(src: @image.asset["_ref"])
         end
       end
     end

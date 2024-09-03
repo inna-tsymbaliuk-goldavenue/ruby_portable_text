@@ -62,9 +62,10 @@ module PortableText
       else
         blocks.push(
           block_klass(:list).new(
-            items: [block],
-            level: block.level,
-            parent: nil
+            list_type: block.list_item,
+            items:     [block],
+            level:     block.level,
+            parent:    nil
           )
         )
       end

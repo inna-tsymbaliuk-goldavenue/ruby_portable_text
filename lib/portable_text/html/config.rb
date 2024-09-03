@@ -9,10 +9,11 @@ module PortableText
 
       setting :block do
         setting :types, default: {
-          block: Html::BlockTypes::Block,
-          image: Html::BlockTypes::Image,
-          list: Html::BlockTypes::List,
-          span: Html::BlockTypes::Span
+          block:         Html::BlockTypes::Block,
+          image:         Html::BlockTypes::Image,
+          externalImage: Html::BlockTypes::ExternalImage,
+          list:          Html::BlockTypes::List,
+          span:          Html::BlockTypes::Span
         }
 
         setting :styles, default: {
@@ -33,14 +34,15 @@ module PortableText
 
         setting :list_types, default: {
           bullet: { node: :ul },
-          numeric: { node: :ol }
+          number: { node: :ol }
         }
       end
 
       setting :span do
         setting :marks, default: {
           strong: { node: :strong },
-          em: { node: :em }
+          em: { node: :em },
+          underline: { node: :u }
         }
       end
     end
