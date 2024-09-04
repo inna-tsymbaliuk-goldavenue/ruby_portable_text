@@ -30,7 +30,8 @@ module PortableText
         }
 
         setting :mark_defs, default: {
-          link: Html::MarkDefs::Link
+          link:          Html::MarkDefs::Link,
+          internal_link: Html::MarkDefs::InternalLink
         }
 
         setting :list_types, default: {
@@ -43,7 +44,10 @@ module PortableText
         setting :marks, default: {
           strong: { node: :strong },
           em: { node: :em },
-          underline: { node: :u }
+          underline: { node: :u },
+          left: { node: :p },
+          center: { node: :p, style: 'text-align: center;' },
+          right: { node: :p, style: 'text-align: right;' }
         }
       end
     end

@@ -17,7 +17,8 @@ module PortableText
       }
 
       setting :mark_defs, default: {
-        link: MarkDefs::Link
+        link:          MarkDefs::Link,
+        internal_link: MarkDefs::InternalLink
       }
     end
 
