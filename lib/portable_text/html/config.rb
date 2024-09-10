@@ -50,6 +50,14 @@ module PortableText
           right: { node: :p, style: 'text-align: right;' }
         }
       end
+
+      setting :routes do
+        setting :base_url, default: ""
+        setting :available_types, default: []
+        setting :paths, default: {}
+        setting :chart_metals, default: {}
+        setting :metals, default: {}
+      end
     end
   end
 end
