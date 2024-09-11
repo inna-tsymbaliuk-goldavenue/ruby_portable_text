@@ -1,6 +1,6 @@
 module PortableText
   class Serializer
-    attr_reader :content, :blocks, :to, :converted
+    attr_reader :content, :blocks, :image_urls, :to, :converted
 
     def initialize(content:, image_urls: [], to: :html)
       @content = content
