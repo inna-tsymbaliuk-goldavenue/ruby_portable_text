@@ -12,7 +12,13 @@ module PortableText
           current_url = image_urls[asset["_ref"]]
           return if current_url.blank?
 
-          img(src: current_url, alt: styles[:alt])
+          img(src: current_url, alt: alt)
+        end
+
+        def alt
+          return if styles.blank?
+
+          styles[:alt]
         end
       end
     end
