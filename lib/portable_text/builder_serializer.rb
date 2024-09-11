@@ -10,7 +10,10 @@ module PortableText
 
     def render
       page_builder.map do |component|
-        PortableText::Serializer.new(content: content(component),
+        current_content = content(component)
+        next unless current_content
+
+        PortableText::Serializer.new(content: current_content,
                                      image_urls: image_urls,
                                      to: to).render.call
       end.join
@@ -29,12 +32,14 @@ module PortableText
       when "buttonGroup"
         component[:buttons]
       else
-        ""
+        nil
       end
     end
 
     def image_content(component)
-      component[:image].merge({ styles: component.slice(:align, :alt, :title, :width) })
+      component[:image]
+        .merge(component.slice(:_key))
+        .merge({ styles: component.slice(:align, :alt, :title, :width) })
     end
   end
 end

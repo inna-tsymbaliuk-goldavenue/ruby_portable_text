@@ -2,10 +2,9 @@ module PortableText
   module Html
     module BlockTypes
       class Image < Html::BaseComponent
-        param :image_urls
         param :image
 
-        delegate :asset, :styles, to: :@image
+        delegate :asset, :styles, :image_urls, to: :@image
 
         def view_template
           return unless asset.key?("_ref")
