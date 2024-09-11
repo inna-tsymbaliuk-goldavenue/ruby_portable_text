@@ -2,7 +2,7 @@ module PortableText
   class Serializer
     attr_reader :content, :blocks, :image_urls, :to, :converted
 
-    def initialize(content:, image_urls: [], to: :html)
+    def initialize(content:, image_urls: {}, to: :html)
       @content = content
       @image_urls = image_urls
       @blocks = []
@@ -65,9 +65,9 @@ module PortableText
         blocks.push(
           block_klass(:list).new(
             list_type: block.list_item,
-            items:     [block],
-            level:     block.level,
-            parent:    nil
+            items: [block],
+            level: block.level,
+            parent: nil
           )
         )
       end

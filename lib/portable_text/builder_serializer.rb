@@ -2,7 +2,7 @@ module PortableText
   class BuilderSerializer
     attr_reader :page_builder, :image_urls, :to
 
-    def initialize(page_builder:, image_urls: [], to: :html)
+    def initialize(page_builder:, image_urls: {}, to: :html)
       @page_builder = page_builder
       @image_urls = image_urls
       @to = to
