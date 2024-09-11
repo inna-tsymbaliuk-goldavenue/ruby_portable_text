@@ -9,7 +9,7 @@ module PortableText
         def view_template
           return unless asset.key?("_ref")
 
-          current_url = @image_urls[asset["_ref"]]
+          current_url = image_urls[asset["_ref"]]
           return if current_url.blank?
 
           img(src: current_url, alt: styles[:alt])
