@@ -8,8 +8,8 @@ module PortableText
 
         def view_template
           return unless url
-          
-          img(src: url, alt:)
+
+          img(src: url, alt: alt)
         end
       end
     end

@@ -11,6 +11,7 @@ module PortableText
       option :listItem, as: :list_item, optional: true
       option :level, optional: true
       option :asset, optional: true
+      option :image_urls, default: proc { {} }, optional: true
 
       def list? = false
       def list_item? = list_item.present?

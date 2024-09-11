@@ -9,11 +9,11 @@ module PortableText
 
       setting :block do
         setting :types, default: {
-          block:          Html::BlockTypes::Block,
-          image:          Html::BlockTypes::Image,
-          externalImage:  Html::BlockTypes::ExternalImage,
-          list:           Html::BlockTypes::List,
-          span:           Html::BlockTypes::Span,
+          block: Html::BlockTypes::Block,
+          image: Html::BlockTypes::Image,
+          externalImage: Html::BlockTypes::ExternalImage,
+          list: Html::BlockTypes::List,
+          span: Html::BlockTypes::Span,
           videoComponent: Html::BlockTypes::Video
         }
 
@@ -30,7 +30,7 @@ module PortableText
         }
 
         setting :mark_defs, default: {
-          link:          Html::MarkDefs::Link,
+          link: Html::MarkDefs::Link,
           internal_link: Html::MarkDefs::InternalLink
         }
 
@@ -46,8 +46,8 @@ module PortableText
           em: { node: :em },
           underline: { node: :u },
           left: { node: :p },
-          center: { node: :p, style: 'text-align: center;' },
-          right: { node: :p, style: 'text-align: right;' }
+          center: { node: :p, style: "text-align: center;" },
+          right: { node: :p, style: "text-align: right;" }
         }
       end
 

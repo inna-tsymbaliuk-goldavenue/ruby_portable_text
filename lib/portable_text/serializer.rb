@@ -2,8 +2,9 @@ module PortableText
   class Serializer
     attr_reader :content, :blocks, :to, :converted
 
-    def initialize(content:, to: :html)
+    def initialize(content:, image_urls: [], to: :html)
       @content = content
+      @image_urls = image_urls
       @blocks = []
       @to = to
       @converted = false
@@ -27,6 +28,7 @@ module PortableText
         params = block_params.transform_keys(&:to_sym)
         params[:children] = create_children(params[:children])
         params[:markDefs] = create_mark_defs(params[:markDefs])
+        params[:image_urls] = image_urls
 
         block = block_klass(params.fetch(:_type)).new(**params)
         add_block(block)
