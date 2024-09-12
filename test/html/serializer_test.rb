@@ -11,14 +11,15 @@ class PortableText::Html::SerializerTest < Minitest::Test
         markDefs: [],
         style: "h1"
       ),
-      PortableText::BlockTypes::Image.new(
+      PortableText::BlockTypes::ExternalImage.new(
         _key: "36be0ac1493e",
-        _type: "image",
-        asset: { "url" => "https://example.com/image.jpg" }
+        _type: "externalImage",
+        url: "https://example.com/image.jpg",
+        alt: "alt"
       )
     ]
 
     serializer = PortableText::Html::Serializer.new(blocks)
-    assert_equal "<h1></h1><img src=\"https://example.com/image.jpg\">", render(serializer)
+    assert_equal "<h1></h1><img src=\"https://example.com/image.jpg\" alt=\"alt\">", render(serializer)
   end
 end

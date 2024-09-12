@@ -9,7 +9,7 @@ class PortableText::Html::BlockTypes::ListTest < Minitest::Test
       _type: "block",
       markDefs: [],
       level: 1,
-      listItem: true,
+      listItem: "bullet",
       children: [
         PortableText::BlockTypes::Span.new(
           _key: "f55398075dd5",
@@ -31,7 +31,7 @@ class PortableText::Html::BlockTypes::ListTest < Minitest::Test
   end
 
   def test_render_creates_a_list_tag_matching_the_list_type
-    list = PortableText::BlockTypes::List.new(list_type: :numeric)
+    list = PortableText::BlockTypes::List.new(list_type: :number)
 
     html_list = PortableText::Html::BlockTypes::List.new(list)
     assert_equal "<ol></ol>", render(html_list)

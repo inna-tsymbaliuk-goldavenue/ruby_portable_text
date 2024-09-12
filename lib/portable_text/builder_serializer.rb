@@ -29,8 +29,6 @@ module PortableText
         Array.wrap(component)
       when "imageComponent"
         Array.wrap(image_content(component))
-      when "buttonGroup"
-        component[:buttons]
       end
     end
 
