@@ -12,12 +12,7 @@ module PortableText
         end
 
         def href
-          path     = PortableText::Html.config.routes.paths
-                                       .dig(language, key_route)
-                                       .to_s
-                                       .gsub("[metalSlug]", chart_metal)
-                                       .gsub("[metal]", metal)
-                                       .gsub("[slug]", slug)
+          path     = route.to_s.gsub("[metalSlug]", chart_metal).gsub("[metal]", metal).gsub("[slug]", slug)
           uri      = URI.parse(PortableText::Html.config.routes.base_url)
           uri.path = "/#{language}#{path}"
           uri.to_s
@@ -33,6 +28,10 @@ module PortableText
           return "" if metal_iso.blank?
 
           PortableText::Html.config.routes.metals.dig(language, metal_iso) || ""
+        end
+
+        def route
+          @route ||= PortableText::Html.config.routes.paths.dig(language, key_route)
         end
       end
     end
