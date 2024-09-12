@@ -4,12 +4,21 @@ module PortableText
       class Image < Html::BaseComponent
         param :image
 
+        delegate :asset, :styles, :image_urls, to: :@image
+
         def view_template
-          if @image.asset.key?("url")
-            img(src: @image.asset["url"])
-          else
-            div { "Please provide a url for this image" }
-          end
+          return unless asset.key?("_ref")
+
+          current_url = image_urls[asset["_ref"]]
+          return if current_url.blank?
+
+          img(src: current_url, alt: alt)
+        end
+
+        def alt
+          return if styles.blank?
+
+          styles[:alt]
         end
       end
     end

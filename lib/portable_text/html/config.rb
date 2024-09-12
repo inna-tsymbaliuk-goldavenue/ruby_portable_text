@@ -7,12 +7,15 @@ module PortableText
       # These can be overridden
       # Example: PortableText::Html.config.block.types.merge!({ block: MyCustomBlock })
 
+      # rubocop:disable Metrics/BlockLength
       setting :block do
         setting :types, default: {
           block: Html::BlockTypes::Block,
           image: Html::BlockTypes::Image,
+          externalImage: Html::BlockTypes::ExternalImage,
           list: Html::BlockTypes::List,
-          span: Html::BlockTypes::Span
+          span: Html::BlockTypes::Span,
+          videoComponent: Html::BlockTypes::Video
         }
 
         setting :styles, default: {
@@ -28,20 +31,34 @@ module PortableText
         }
 
         setting :mark_defs, default: {
-          link: Html::MarkDefs::Link
+          link: Html::MarkDefs::Link,
+          internal_link: Html::MarkDefs::InternalLink
         }
 
         setting :list_types, default: {
           bullet: { node: :ul },
-          numeric: { node: :ol }
+          number: { node: :ol }
         }
       end
+      # rubocop:enable Metrics/BlockLength
 
       setting :span do
         setting :marks, default: {
           strong: { node: :strong },
-          em: { node: :em }
+          em: { node: :em },
+          underline: { node: :u },
+          left: { node: :p },
+          center: { node: :p, style: "text-align: center;" },
+          right: { node: :p, style: "text-align: right;" }
         }
+      end
+
+      setting :routes do
+        setting :base_url, default: ""
+        setting :available_types, default: []
+        setting :paths, default: {}
+        setting :chart_metals, default: {}
+        setting :metals, default: {}
       end
     end
   end

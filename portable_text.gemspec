@@ -4,7 +4,7 @@ require_relative "lib/portable_text/version"
 
 Gem::Specification.new do |spec|
   spec.name = "portable_text"
-  spec.version= PortableText::VERSION
+  spec.version = PortableText::VERSION
   spec.authors = ["Maxime Souillat"]
   spec.email = ["maxime@beaucouplus.com"]
   spec.summary = "A ruby renderer for Sanity Portable Text"
@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "activesupport", "~> 7.1"
+  spec.add_dependency "activesupport", ">= 7.0"
   spec.add_dependency "dry-configurable", "~> 1.0"
   spec.add_dependency "dry-inflector", "~> 1.0"
   spec.add_dependency "dry-initializer", "~> 3.1"

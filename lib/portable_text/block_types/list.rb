@@ -6,7 +6,7 @@ module PortableText
     class List
       extend Dry::Initializer
 
-      option :list_type, default: proc { 'bullet' }
+      option :list_type, default: proc { "bullet" }
       option :items, default: proc { [] }
       option :level, default: proc { 1 }
       option :parent, default: proc { nil }

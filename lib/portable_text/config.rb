@@ -10,12 +10,15 @@ module PortableText
       setting :types, default: {
         block: BlockTypes::Block,
         image: BlockTypes::Image,
+        externalImage: BlockTypes::ExternalImage,
         list: BlockTypes::List,
-        span: BlockTypes::Span
+        span: BlockTypes::Span,
+        videoComponent: BlockTypes::Video
       }
 
       setting :mark_defs, default: {
-        link: MarkDefs::Link
+        link: MarkDefs::Link,
+        internal_link: MarkDefs::InternalLink
       }
     end
 
