@@ -8,10 +8,8 @@ module PortableText
 
         def view_template
           return unless url
-          
-          figure {
-            iframe(src: url, width:, title:)
-          }
+
+          figure { iframe(src: url, width: width, title: title) }
         end
       end
     end

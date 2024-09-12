@@ -7,6 +7,7 @@ module PortableText
       # These can be overridden
       # Example: PortableText::Html.config.block.types.merge!({ block: MyCustomBlock })
 
+      # rubocop:disable Metrics/BlockLength
       setting :block do
         setting :types, default: {
           block: Html::BlockTypes::Block,
@@ -39,6 +40,7 @@ module PortableText
           number: { node: :ol }
         }
       end
+      # rubocop:enable Metrics/BlockLength
 
       setting :span do
         setting :marks, default: {

@@ -31,8 +31,6 @@ module PortableText
         Array.wrap(image_content(component))
       when "buttonGroup"
         component[:buttons]
-      else
-        nil
       end
     end
 

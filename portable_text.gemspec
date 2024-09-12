@@ -4,7 +4,7 @@ require_relative "lib/portable_text/version"
 
 Gem::Specification.new do |spec|
   spec.name = "portable_text"
-  spec.version= PortableText::VERSION
+  spec.version = PortableText::VERSION
   spec.authors = ["Maxime Souillat"]
   spec.email = ["maxime@beaucouplus.com"]
   spec.summary = "A ruby renderer for Sanity Portable Text"
